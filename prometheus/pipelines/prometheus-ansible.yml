@@ -1,5 +1,5 @@
 pipelines:
-  terraform-prometheus:
+  terraform-ansible:
     group: tools
     label_template: ${COUNT}
     lock_behavior: none
