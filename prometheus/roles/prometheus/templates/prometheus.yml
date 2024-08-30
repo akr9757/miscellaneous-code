@@ -39,4 +39,5 @@ scrape_configs:
       - region: us-east-1
         port: 9100
         filters:
-          - name: tag:Name
+          - name: tag:Monitor
+            values: ["true"]
