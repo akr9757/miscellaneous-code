@@ -1,4 +1,4 @@
-z- name: Setting Up a  prometheus server
+- name: Setting Up a Expense Project
   hosts: all
   become: true
   roles:
