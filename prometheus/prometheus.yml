@@ -1,0 +1,5 @@
+z- name: Setting Up a  prometheus server
+  hosts: all
+  become: true
+  roles:
+    - role: prometheus

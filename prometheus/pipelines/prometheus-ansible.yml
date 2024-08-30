@@ -1,0 +1,25 @@
+pipelines:
+  terraform-prometheus:
+    group: defaultGroup
+    label_template: ${COUNT}
+    lock_behavior: none
+    display_order: -1
+    materials:
+      git-fe20804:
+        git: https://github.com/akr9757/expense-terraform.git
+        shallow_clone: false
+        auto_update: true
+        branch: main
+    stages:
+      - DEV:
+          fetch_materials: true
+          approval:
+            type: manual
+          jobs:
+            shell:
+              timeout: 0
+              tasks:
+                - exec:
+                    command: bash
+                    arguments: ["ansible.sh"]
+
