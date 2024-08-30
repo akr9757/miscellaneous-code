@@ -22,7 +22,7 @@ resource "aws_instance" "prometheus" {
   }
 }
 
-resource "aws_route53_record" "record" {
+resource "aws_route53_record" "private" {
   zone_id = "Z04275581JIKR4XEVM94K"
   name    = "prometheus-pvt"
   type    = "CNAME"
@@ -30,7 +30,7 @@ resource "aws_route53_record" "record" {
   records = [aws_instance.prometheus.private_ip]
 }
 
-resource "aws_route53_record" "record" {
+resource "aws_route53_record" "public" {
   zone_id = "Z04275581JIKR4XEVM94K"
   name    = "prometheus-pub"
   type    = "A"
