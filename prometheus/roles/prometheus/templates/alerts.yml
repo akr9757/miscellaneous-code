@@ -15,3 +15,17 @@ groups:
           severity: critical
         annotations:
           summary: Memory Used Percentage In Critical State
+      - alert: CPUUsageWarning
+        expr: avg by(instance)((1-(rate(node_cpu_seconds_total{mode="idle"}[5m])))*100) > 80
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: CPU Usege Warning State
+      - alert: CPUUsageWarning
+        expr: avg by(instance)((1-(rate(node_cpu_seconds_total{mode="idle"}[5m])))*100) > 90
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: CPU Usege critical State
