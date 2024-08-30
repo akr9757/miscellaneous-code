@@ -6,7 +6,7 @@ pipelines:
     display_order: -1
     materials:
       git-fe20804:
-        git: https://github.com/akr9757/expense-terraform.git
+        git: https://github.com/akr9757/miscellaneous-code.git
         shallow_clone: false
         auto_update: true
         branch: main
