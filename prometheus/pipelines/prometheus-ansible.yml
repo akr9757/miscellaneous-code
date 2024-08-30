@@ -1,6 +1,6 @@
 pipelines:
   terraform-prometheus:
-    group: defaultGroup
+    group: tools
     label_template: ${COUNT}
     lock_behavior: none
     display_order: -1
