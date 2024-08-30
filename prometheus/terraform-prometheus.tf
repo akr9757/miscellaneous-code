@@ -16,7 +16,7 @@ resource "aws_instance" "prometheus" {
   ami           = data.aws_ami.ami.image_id
   instance_type = "t3.small"
   vpc_security_group_ids = ["sg-06d14744e7a12dcaf"]
-  iam_instance_profile = [aws_iam_instance_profile.profile.name]
+  iam_instance_profile = [aws_iam_instance_profile.main.name]
 
   tags = {
     Name = "prometheus"
@@ -39,7 +39,7 @@ resource "aws_route53_record" "public" {
   records = [aws_instance.prometheus.public_ip]
 }
 
-resource "aws_iam_instance_profile" "profile" {
+resource "aws_iam_instance_profile" "main" {
   name = "prometheus-profile"
   role = aws_iam_role.main.name
 }
