@@ -34,7 +34,7 @@ scrape_configs:
 #        labels:
 #          project: expense
 
-  - job_name: 'ec2'
-      ec2_sd_configs:
-        - region: us-east-1
-          port: 9100
+  - job_name: 'node'
+    ec2_sd_configs:
+      - region: us-east-1
+        port: 9100
