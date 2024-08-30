@@ -21,3 +21,7 @@
     enabled: yes
     daemon-reload: yes
 
+- name: Install Grafana
+  ansible.builtin.shell: yum install -y https://dl.grafana.com/enterprise/release/grafana-enterprise-11.2.0-1.x86_64.rpm
+
+
