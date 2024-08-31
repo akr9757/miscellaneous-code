@@ -26,6 +26,9 @@
     enabled: yes
     daemon-reload: yes
 
+- name: Wait For Prometheus Port
+  ansible.builtin.shell: sleep ; netstat -lntp | grep 9090
+
 - name: Install Grafana
   ansible.builtin.shell: yum install -y https://dl.grafana.com/enterprise/release/grafana-enterprise-11.2.0-1.x86_64.rpm
 
@@ -57,3 +60,6 @@
     state: restarted
     enabled: yes
     daemon-reload: yes
+
+- name: Wait For Alert Manager Port
+  ansible.builtin.shell: sleep ; netstat -lntp | grep 9093
